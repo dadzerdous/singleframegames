@@ -104,16 +104,15 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Gobs" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="EACDA31B-C29B-419B-98A3-AFD6D676BE73" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ===========================
-   REMOVE ALL TRANSITIONS
-   (no fading, no overlays)
-   =========================== */
-
+	<tw-storydata name="Gobs" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="EACDA31B-C29B-419B-98A3-AFD6D676BE73" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ============================================================
+   GLOBAL TRANSITION DISABLE
+   ============================================================ */
 .transition,
 .transition-in,
 .transition-out,
 .passage-transition,
-#passage.ready {
+#passage.ready,
+#passage {
     display: none !important;
     animation: none !important;
     transition: none !important;
@@ -122,53 +121,59 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     box-shadow: none !important;
 }
 
-/* Also disable any leftover animation on the passage */
-#passage {
-    animation: none !important;
-    transition: none !important;
-    background: none !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-}
-
 /* Hide SugarCube's back/forward history buttons */
 #ui-bar-history {
     display: none;
 }
 
-/* --- Base colors & fonts --- */
+/* ============================================================
+   BASE TYPOGRAPHY & TEXT EFFECTS
+   ============================================================ */
 body {
-    color: #e7e4f8;
+    color: #A8D8FF;
     font-family: "Georgia", "Times New Roman", serif;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Center the story text and keep it readable */
+/* Black outline around ALL story text */
+body, #passages, #passages * {
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+
+/* ============================================================
+   STORY CONTAINER
+   ============================================================ */
 #passages {
     max-width: 700px;
     margin: 40px auto;
     padding: 16px 18px 40px 18px;
-    background: rgba(8, 6, 16, 0.45); /* transparent box */
+    background: rgba(8, 6, 16, 0.45);
     border-radius: 14px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Hide passage titles */
+/* Hide Twine passage titles */
 .passage .passage-title {
     display: none;
 }
 
-/* Choice buttons */
+/* ============================================================
+   CHOICE BUTTONS
+   ============================================================ */
 a.link-internal {
     display: block;
-  	margin: 5px 0; 
+    margin: 5px 0 12px 0;
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
     border: 1px solid #4e4b7f;
     background: rgba(27, 24, 51, 0.95);
-    color: #d8d4ff;
+    color: #ff6b6b;
     font-weight: 600;
 }
 
@@ -178,7 +183,9 @@ a.link-internal:hover {
     box-shadow: 0 0 10px rgba(143, 132, 255, 0.8);
 }
 
-/* Mobile tweaks */
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
 @media (max-width: 600px) {
     #passages {
         margin: 10px;
@@ -191,110 +198,73 @@ a.link-internal:hover {
     }
 }
 
-/* Sidebar style */
-#ui-bar-header {
-    background: rgba(6, 4, 18, 0.95);
-    color: #e7e4f8;
-}
+/* ============================================================
+   BACKGROUND STAGES
+   ============================================================ */
 
-/* ===========================
-    BACKGROUND STAGES (FIXED)
-    =========================== */
-
-/* Stage 0: PROLOGUE BASELINE (No Tint) */
+/* Base image */
 body.bg0 {
-    background: url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png") center center fixed no-repeat;
-    background-size: cover;
+    background:
+        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png")
+        center center / cover
+        no-repeat fixed;
 }
 
-/* Stage 1 — Slight Red Tint Overlay */
+/* Stage 1 — light tint */
 body.bg1 {
-    /* **FIX:** Use a single background property, listing the gradient first as the overlay. */
-    background: 
-        /* 1. The Gradient Overlay (Top Layer) */
-        linear-gradient(rgba(130, 0, 0, 0.3), rgba(60, 0, 0, 0.2)), 
-        /* 2. The Image (Bottom Layer) */
-        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png");
-
-    /* **FIX:** Combine all other properties into shorthands or separate lines for clarity. */
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background:
+        linear-gradient(rgba(130, 0, 0, 0.3), rgba(60, 0, 0, 0.2)),
+        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png")
+        center center / cover
+        no-repeat fixed;
 }
 
-/* Stage 2 — Stronger Red Tint Overlay */
+/* Stage 2 — stronger tint */
 body.bg2 {
-    /* **FIX:** Applying the same correction here for a stronger effect. */
-    background: 
-        /* Stronger Gradient */
-        linear-gradient(rgba(130, 0, 0, 0.5), rgba(45, 0, 0, 0.4)), 
-        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png");
-        
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background:
+        linear-gradient(rgba(130, 0, 0, 0.5), rgba(45, 0, 0, 0.4)),
+        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png")
+        center center / cover
+        no-repeat fixed;
 }
 
-/* Stage 3 — Stronger Red Tint Overlay */
+/* Stage 3 — deepest tint */
 body.bg3 {
-    /* **FIX:** Applying the same correction here for a stronger effect. */
-    background: 
-        /* Stronger Gradient */
-        linear-gradient(rgba(130, 0, 0, 0.5), rgba(30, 0, 0, 0.8)), 
-        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png");
-        
-    background-position: center center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background:
+        linear-gradient(rgba(130, 0, 0, 0.5), rgba(30, 0, 0, 0.8)),
+        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png")
+        center center / cover
+        no-repeat fixed;
 }
 
-
+/* Death Background Overlay */
 body.deathbg {
     background:
-        /* Dramatic darker red overlay */
-        linear-gradient(
-            rgba(150, 0, 0, 0.7), 
-            rgba(0, 0, 0, 0.8)
-        ),
-        /* Your existing prologue background */
-        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png");
-        
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    /* Optional: slight vignette for atmosphere */
+        linear-gradient(rgba(150, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+        url("https://raw.githubusercontent.com/dadzerdous/orphand/main/images/prologue.png")
+        center center / cover
+        no-repeat fixed;
     box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.9);
 }
 
-/* --- FIX: Consistent Link Spacing --- */
-
-/* Eliminate bottom margin on paragraphs so they don't push the following links away */
-#passages p:last-of-type,
-#passages p {
+/* ============================================================
+   PARAGRAPH + CHOICE SPACING FIXES
+   ============================================================ */
+#passages p,
+#passages p:last-of-type {
     margin-bottom: 0 !important;
 }
 
-/* Ensure a little space after links before the next section of text */
-a.link-internal {
-    margin: 5px 0 12px 0; /* Ensures 12px top and bottom margin on every link */
-    /* ... rest of your link styles ... */
+/* Choiceblock layout */
+.choiceblock {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 2em;
 }
 
 .choiceblock br {
     display: none;
-}
-
-/* Optional: Make it look like a nice menu */
-.choiceblock {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Controls the space between valid links */
-    margin-top: 2em;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">// =======================================
 // Disable SugarCube fade-in/fade-out fully

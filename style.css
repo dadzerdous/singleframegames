@@ -38,8 +38,27 @@ h1 {
   text-decoration: none;
   color: inherit;
   transition: background 0.15s ease, transform 0.2s ease;
+    position: relative;
+  overflow: hidden;
+}
+.project::after {
+  content: attr(data-emoji);
+  position: absolute;
+  right: 1rem;
+  bottom: 0.5rem;
+
+  font-size: 6rem;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(10px);
 }
 
+.project:hover::after {
+  opacity: 0.08;          /* watermark strength */
+  transform: translateY(0);
+}
 
 .project:hover {
   background: #23232b;

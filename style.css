@@ -42,6 +42,7 @@ h1 {
 
 .project:hover {
   background: #23232b;
+  transform: translateY(-2px);
 }
 
 .project h2 {

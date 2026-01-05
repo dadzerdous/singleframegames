@@ -37,8 +37,9 @@ h1 {
   background: #1a1a20;
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s ease, border 0.2s ease, transform 0.2s ease;;;
+  transition: background 0.15s ease, transform 0.2s ease;
 }
+
 
 .project:hover {
   background: #23232b;

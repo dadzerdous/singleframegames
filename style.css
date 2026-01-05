@@ -37,7 +37,7 @@ h1 {
   background: #1a1a20;
   text-decoration: none;
   color: inherit;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border 0.2s ease, transform 0.2s ease;;;
 }
 
 .project:hover {
@@ -83,3 +83,19 @@ footer {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+.site-version {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-family: monospace;
+  letter-spacing: 0.05em;
+
+
+}
+
+.footer-copy:hover .site-version {
+  opacity: 0.6;
+}
+

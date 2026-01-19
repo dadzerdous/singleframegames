@@ -118,4 +118,25 @@ footer {
 .footer-copy:hover .site-version {
   opacity: 0.6;
 }
+.profiles {
+  margin-top: 3rem;
+}
+
+.profile-links {
+  list-style: none;
+  padding: 0;
+}
+
+.profile-links li {
+  margin: 0.4rem 0;
+}
+
+.profile-links a {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.profile-links a:hover {
+  opacity: 1;
+}
 

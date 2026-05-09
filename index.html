@@ -4,96 +4,93 @@
   <meta charset="utf-8" />
   <title>SingleFrameGames</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="sfg-noise"></div>
+
   <main class="container">
-    <h1>SingleFrameGames</h1>
 
-    <p class="tagline">
-      Small interactive projects. Games, tools, and experiments.
-    </p>
+    <header class="sfg-header">
+      <p class="sfg-eyebrow">indie · experimental · player-first</p>
+      <h1 class="sfg-title">SingleFrame<br>Games</h1>
+      <p class="sfg-tagline">Games, tools & experiments from one developer. Small scope, genuine craft.</p>
+    </header>
 
-    <section class="projects">
-      <a class="project" href="https://dadzerdous.github.io/gobachi/" target="_blank" data-emoji="🪄">
+    <p class="sfg-section-label">main projects</p>
 
-        <h2>Gobachi</h2>
-        <p>Browser-based virtual pet game focused on interaction and UI systems.</p>
+    <section class="sfg-main-grid">
+
+      <a class="sfg-card featured" href="https://github.com/dadzerdous" target="_blank">
+        <div class="sfg-card-accent"></div>
+        <span class="sfg-card-icon">{ }</span>
+        <h2>GitHub <span class="sfg-badge">dadzerdous</span></h2>
+        <p>Source code, experiments, and everything in progress. The full picture of what's being built.</p>
+        <span class="sfg-card-arrow">↗</span>
       </a>
 
-      <a class="project" href="https://dadzerdous.github.io/towerhoard/" target="_blank" data-emoji="🧟">
-
-  <h2>Tower Hoard</h2>
-  <p>FPS Tower defender</p>
-</a>
-
-      <a class="project" href="https://dadzerdous.github.io/muddygob/" target="_blank" data-emoji="🪵">
-
-        <h2>MuddyGob</h2>
-        <p>Multiplayer text-based game (MUD) with custom server and web client.</p>
+      <a class="sfg-card" href="https://dadzerdous.github.io/muddygob/" target="_blank">
+        <div class="sfg-card-accent"></div>
+        <span class="sfg-card-icon">&gt;_</span>
+        <h2>NewMUD</h2>
+        <p>Text-based multiplayer world. Custom server, web client.</p>
+        <span class="sfg-card-arrow">↗</span>
       </a>
-      
-        <a class="project" href="https://dadzerdous.github.io/ballysticks/" target="_blank" data-emoji="🏒">
-  <h2>Ballysticks</h2>
-  <p>Arcade-style browser game focused on timing, physics, and responsive controls.</p>
-</a>
-<a class="project" href="https://dadzerdous.github.io/aif/" target="_blank" data-emoji="🤖">
 
-  <h2>AI Isn’t Funny</h2>
-  <p>Webcomic experiment exploring humor, AI prompts, and community voting. (server activated on request)</p>
-</a>
+      <a class="sfg-card" href="https://dadzerdous.github.io/gyrorunner/" target="_blank">
+        <div class="sfg-card-accent"></div>
+        <span class="sfg-card-icon">⊕</span>
+        <h2>GyroRunner</h2>
+        <p>Brotato-style gauntlet meets multiplayer mayhem. Top-down survivor with friends.</p>
+        <span class="sfg-card-arrow">↗</span>
+      </a>
+
+      <a class="sfg-card" href="https://dadzerdous.github.io/lester/" target="_blank">
+        <div class="sfg-card-accent"></div>
+        <span class="sfg-card-icon">◈</span>
+        <h2>Unlikely Hero</h2>
+        <p>2D platformer. The odds are against you — play anyway.</p>
+        <span class="sfg-card-arrow">↗</span>
+      </a>
 
     </section>
 
-    <section class="profiles">
-  <h2>Other Projects & Profiles</h2>
+    <p class="sfg-section-label">also made</p>
 
-  <ul class="profile-links">
-    <li>
-      <a href="https://dadzerdous.github.io/gobyrunner/" target="_blank">
-        🏃 GobyRunner
+    <section class="sfg-mini-grid">
+      <a class="sfg-mini" href="https://dadzerdous.github.io/gobachi/" target="_blank">
+        <span class="sfg-mini-dot"></span>Gobachi
       </a>
-    </li>
-    <li>
-      <a href="https://dadzerdous.github.io/paddlegob/" target="_blank">
-        🛶 PaddleGob
+      <a class="sfg-mini" href="https://dadzerdous.github.io/towerhoard/" target="_blank">
+        <span class="sfg-mini-dot"></span>Tower Hoard
       </a>
-    </li>
-    <li>
-      <a href="https://dadzerdous.github.io/icerunner/" target="_blank">
-        ❄️ IceRunner
+      <a class="sfg-mini" href="https://dadzerdous.github.io/ballysticks/" target="_blank">
+        <span class="sfg-mini-dot"></span>Ballysticks
       </a>
-    </li>
-  </ul>
-</section>
+      <a class="sfg-mini" href="https://dadzerdous.github.io/gobyrunner/" target="_blank">
+        <span class="sfg-mini-dot"></span>GobyRunner
+      </a>
+      <a class="sfg-mini" href="https://dadzerdous.github.io/paddlegob/" target="_blank">
+        <span class="sfg-mini-dot"></span>PaddleGob
+      </a>
+      <a class="sfg-mini" href="https://dadzerdous.github.io/icerunner/" target="_blank">
+        <span class="sfg-mini-dot"></span>IceRunner
+      </a>
+    </section>
 
-
-    <section id="about">
-  <h2>About SingleFrameGames</h2>
-  <p>
-    SingleFrameGames is an independent game studio focused on player-first
-    experiences, thoughtful systems design, and games that foster genuine
-    connection.
-  </p>
-</section>
-
- <footer id="site-footer">
-  <div class="footer-links">
-    <a href="/writing.html">Writing</a>
-
-    <a href="#contact">Contact</a>
-    <a href="/resume/" target="_blank">Resume</a>
-    <a href="https://www.linkedin.com/in/b-s-c" target="_blank">LinkedIn</a>
-    <a href="https://kazerdous.itch.io/" target="_blank">Itch.io</a>
-    <a href="https://ko-fi.com/dadzerdous" target="_blank">Donate</a>
-  </div>
-
-<div class="footer-copy">
-  © 2026 SingleFrameGames
-  <span class="site-version">0.0.08</span>
-</div>
-</footer>
+    <footer id="site-footer">
+      <span class="sfg-footer-copy">© 2026 SINGLEFRAMEGAMES <span class="site-version">v0.0.08</span></span>
+      <nav class="footer-links">
+        <a href="https://kazerdous.itch.io/" target="_blank">Itch.io</a>
+        <a href="https://ko-fi.com/dadzerdous" target="_blank">Ko-fi</a>
+        <a href="https://www.linkedin.com/in/b-s-c" target="_blank">LinkedIn</a>
+        <a href="/resume/" target="_blank">Resume</a>
+      </nav>
+    </footer>
 
   </main>
 </body>
